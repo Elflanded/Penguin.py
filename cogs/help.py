@@ -3,14 +3,12 @@ from discord.ext import commands
 import time
 import datetime
 
-class Help(commands.Cog):
+class Help(commands.Cog, commands.HelpCommand):
   def __init__(self, bot):
     self.bot = bot
 
 
-  @commands.command(
-   name="help"
-   )
+  @commands.group(invoke_without_command=True)
   async def help(self, ctx):
       help_embed = discord.Embed(
         title="Help",
@@ -27,6 +25,11 @@ class Help(commands.Cog):
 
       
       await ctx.send(embed=help_embed)
+
+ 
+  
+
+    
 
 
 def setup(bot):

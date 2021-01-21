@@ -3,9 +3,10 @@ from discord.ext import commands
 import os
 from os import environ
 
-
 bot = commands.Bot(command_prefix=environ.get("PREFIX"))
 bot.remove_command("help")
+
+
 
 
 @bot.event
